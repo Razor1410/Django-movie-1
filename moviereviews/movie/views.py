@@ -10,3 +10,8 @@ def home(request):
 
 def about(request):
     return HttpResponse('<h1>Strona o mnie</h1>')
+
+
+def signup(request):
+    email = request.GET.get('email')
+    return render(request, 'signup.html', {'email': email})
