@@ -3,7 +3,9 @@ from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse('<h2>Witam na stronie głównej</h2>')
+    searchTerm = request.GET.get('searchMovie')
+    return render(request, 'home.html', {'name': 'Tomek',
+                                         'searchTerm': searchTerm})
 
 
 def about(request):
